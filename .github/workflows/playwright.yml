@@ -22,12 +22,12 @@ jobs:
       - name: Install Assignment1 dependencies
         run: |
           cd Assignment1
-          npm install
+          npm ci
 
       - name: Install Playwright browsers (Assignment1)
         run: |
           cd Assignment1
-          npx playwright install --with-deps
+          node node_modules/playwright/cli.js install --with-deps
 
       - name: Run Assignment1 tests
         run: |
@@ -38,12 +38,12 @@ jobs:
       - name: Install Assignment2 dependencies
         run: |
           cd Assignment2
-          npm install
+          npm ci
 
       - name: Install Playwright browsers (Assignment2)
         run: |
           cd Assignment2
-          npx playwright install --with-deps
+          node node_modules/playwright/cli.js install --with-deps
 
       - name: Run Assignment2 tests
         run: |
