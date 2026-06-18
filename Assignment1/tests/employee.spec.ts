@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-import { LoginPage } from '../pages/LoginPage';
-import { DashboardPage } from '../pages/DashboardPage';
-import { EmployeeListPage } from '../pages/EmployeeListPage';
+import { LoginPage } from '../Pages/LoginPage';
+import { DashboardPage } from '../Pages/DashboardPage';
+import { EmployeeListPage } from '../Pages/EmployeeListPage';
 
 test.describe(
   'Employee Search Tests',
