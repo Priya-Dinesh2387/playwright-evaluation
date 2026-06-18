@@ -1,0 +1,21 @@
+{
+  "name": "assignment1",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test",
+    "regression": "playwright test",
+    "smoke": "playwright test tests/login.spec.ts",
+    "report": "playwright show-report"
+  },
+  "dependencies": {
+    "playwright": "^1.61.0",
+    "playwright-core": "^1.61.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^25.9.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

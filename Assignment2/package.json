@@ -1,0 +1,13 @@
+{
+  "name": "assignment2",
+  "scripts": {
+    "test": "playwright test",
+    "regression": "playwright test",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.0",
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2"
+  }
+}
