@@ -19,46 +19,46 @@ jobs:
           node-version: 20
 
       # ---------------- Assignment 1 ----------------
-      - name: Install Assignment 1 dependencies
+      - name: Install Assignment1 dependencies
         run: |
           cd Assignment1
           npm install
 
-      - name: Install Playwright browsers (Assignment 1)
+      - name: Install Playwright browsers (Assignment1)
         run: |
           cd Assignment1
           npx playwright install --with-deps
 
-      - name: Run Assignment 1 tests
+      - name: Run Assignment1 tests
         run: |
           cd Assignment1
           npm run regression
 
       # ---------------- Assignment 2 ----------------
-      - name: Install Assignment 2 dependencies
+      - name: Install Assignment2 dependencies
         run: |
           cd Assignment2
           npm install
 
-      - name: Install Playwright browsers (Assignment 2)
+      - name: Install Playwright browsers (Assignment2)
         run: |
           cd Assignment2
           npx playwright install --with-deps
 
-      - name: Run Assignment 2 tests
+      - name: Run Assignment2 tests
         run: |
           cd Assignment2
           npm run regression
 
       # ---------------- Reports ----------------
-      - name: Upload Assignment 1 report
+      - name: Upload Assignment1 report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: assignment1-report
           path: Assignment1/playwright-report
 
-      - name: Upload Assignment 2 report
+      - name: Upload Assignment2 report
         uses: actions/upload-artifact@v4
         if: always()
         with:
