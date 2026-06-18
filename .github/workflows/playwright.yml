@@ -1,61 +1,66 @@
 name: Playwright Tests
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
 
 jobs:
-test:
-runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  - name: Checkout Repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-  - name: Setup Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: 20
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-  # Assignment 1
-  - name: Install Assignment1 Dependencies
-    working-directory: Assignment1
-    run: npm ci
+      # ---------------- Assignment 1 ----------------
+      - name: Install Assignment 1 dependencies
+        run: |
+          cd Assignment1
+          npm install
 
-  - name: Install Playwright Browsers for Assignment1
-    working-directory: Assignment1
-    run: npx playwright install --with-deps
+      - name: Install Playwright browsers (Assignment 1)
+        run: |
+          cd Assignment1
+          npx playwright install --with-deps
 
-  - name: Run Assignment1 Tests
-    working-directory: Assignment1
-    run: npm run regression
+      - name: Run Assignment 1 tests
+        run: |
+          cd Assignment1
+          npm run regression
 
-  # Assignment 2
-  - name: Install Assignment2 Dependencies
-    working-directory: Assignment2
-    run: npm ci
+      # ---------------- Assignment 2 ----------------
+      - name: Install Assignment 2 dependencies
+        run: |
+          cd Assignment2
+          npm install
 
-  - name: Install Playwright Browsers for Assignment2
-    working-directory: Assignment2
-    run: npx playwright install --with-deps
+      - name: Install Playwright browsers (Assignment 2)
+        run: |
+          cd Assignment2
+          npx playwright install --with-deps
 
-  - name: Run Assignment2 Tests
-    working-directory: Assignment2
-    run: npm run regression
+      - name: Run Assignment 2 tests
+        run: |
+          cd Assignment2
+          npm run regression
 
-  - name: Upload Assignment1 Report
-    uses: actions/upload-artifact@v4
-    if: always()
-    with:
-      name: assignment1-playwright-report
-      path: Assignment1/playwright-report
+      # ---------------- Reports ----------------
+      - name: Upload Assignment 1 report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: assignment1-report
+          path: Assignment1/playwright-report
 
-  - name: Upload Assignment2 Report
-    uses: actions/upload-artifact@v4
-    if: always()
-    with:
-      name: assignment2-playwright-report
-      path: Assignment2/playwright-report
-```
+      - name: Upload Assignment 2 report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: assignment2-report
+          path: Assignment2/playwright-report
